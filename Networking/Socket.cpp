@@ -2,7 +2,7 @@
 
 //Defult constructor
 
-HDE::Socket::Socket(int domain, int service, int protocol, int prot, u_long interface)
+MDV::Socket::Socket(int domain, int service, int protocol, int prot, u_long interface)
 {
     //Defined the address Structure
     address.sin_family = domain;
@@ -12,10 +12,7 @@ HDE::Socket::Socket(int domain, int service, int protocol, int prot, u_long inte
     //Established socket
     sock = socket(domain, service, protocol);
     test_connection(sock);
-    
-    //Established network connection
-    connection = connect_to_network(sock, address);
-    test_connection(connection);
+
     
 }
 
@@ -45,4 +42,9 @@ int MDV::Socket::get_sock()
 int MDV::Socket::get_connection()
 {
     return connection();
+}
+
+void  MDV::Socket::set_connection(int con)
+{
+    connection = con;
 }
