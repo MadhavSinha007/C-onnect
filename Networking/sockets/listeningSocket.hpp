@@ -5,7 +5,7 @@
 #include<binding.hpp>
 
 namespace MDV{
-    class ListeningSocket{
+    class ListeningSocket: public Binding{
 
         private:
             int backlog;
